@@ -16,9 +16,8 @@
 
 ## Usage
 
-```sh
-s3-download
-```
+```console
+$ s3-download --help
 
 Opções de filtro:
   -e, --environment <env>  ambiente que quer baixar os dados (dev or prod) (default: "prod")
@@ -27,6 +26,7 @@ Opções de filtro:
 
 Se tiver alguma dúvida utilize o comando:
   -h, --help               mostra todos os comandos disponíveis
+```
 
 
 - Ao executar o comando acima o script buscará todos os objetos no bucket do ambiente especificado;

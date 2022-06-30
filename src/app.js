@@ -1,18 +1,18 @@
 #!/usr/bin/env node
 import { listAllObjects, getObject } from './services/aws.js';
-import { getDatesInRange, numberTwoDigits, filterObjectsByDay, getFileName, saveFile } from './utils.js';
+import { getDatesInRange, numberTwoDigits, filterObjectsByDay, getFileName, saveFile, formatDate } from './utils.js';
 import { Command } from 'commander';
 
 import 'dotenv/config';
 import chalk from 'chalk';
 
 const program = new Command();
-const sevenDaysAgo = new Date(Date.now() - (7 * 24 * 60 * 60 * 1000)).toLocaleDateString("en-US");
+const sevenDaysAgo = new Date(Date.now() - (7 * 24 * 60 * 60 * 1000));
 
 program
   .option('-e, --environment <env>', 'environment that wants to download the data (dev or prod)', 'prod')
-  .option('-sd, --startDate <date>', 'date you want to start downloads. Format: YYYY/MM/DD', sevenDaysAgo)
-  .option('-ed, --endDate <date>', 'date you want to finish downloads. Format: YYYY/MM/DD', new Date().toLocaleDateString("en-US"))
+  .option('-sd, --startDate <date>', 'date you want to start downloads. Format: YYYY/MM/DD', formatDate(sevenDaysAgo))
+  .option('-ed, --endDate <date>', 'date you want to finish downloads. Format: YYYY/MM/DD', formatDate(new Date()))
   .parse();
 
 const { environment, startDate, endDate } = program.opts();

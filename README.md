@@ -21,8 +21,8 @@ $ s3-download --help
 
 Opções de filtro:
   -e, --environment <env>  ambiente que quer baixar os dados (dev or prod) (default: "prod")
-  -sd, --startDate <date>  data que quer iniciar os downloads. Formato: YYYY/MM/DD (default: "6/13/2022")
-  -ed, --endDate <date>    data que quer finalizar os downloads Formato: YYYY/MM/DD (default: "6/20/2022")
+  -sd, --startDate <date>  data que quer iniciar os downloads. Formato: YYYY/MM/DD (default: "2022/06/23")
+  -ed, --endDate <date>    data que quer finalizar os downloads Formato: YYYY/MM/DD (default: "2022/06/30")
 
 Se tiver alguma dúvida utilize o comando:
   -h, --help               mostra todos os comandos disponíveis
